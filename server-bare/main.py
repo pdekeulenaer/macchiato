@@ -2,12 +2,11 @@
 
 # A very simple implementation of the Macchiato prototype API
 
+# Import json and utility libraries
 import json
-import util
+from util import Logger, RequestState, Config
 
 
-# Define global variables
-DEVELOPMENT = True	# set to True to enable all log messages
 
 class API():
 	def __init__(self):
@@ -85,6 +84,8 @@ class ExpenseReport(object):
 
 
 if __name__ == "__main__":
+	Config.instance().DEBUG = True
+
 	api = API()
 
 	msg1 = {'user_id':'philip', 'date':'2015-05-14', 'amount': 0.55, 'category':'food & beverage', 'reimburseable': False}

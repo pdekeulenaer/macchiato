@@ -1,5 +1,19 @@
 # utilities
 
+
+class Config():	
+	def __init__(self):
+		self.DEBUG = True
+		pass
+
+	_instance = None
+
+	@staticmethod
+	def instance():
+		if (Config._instance is None):
+			Config._instance = Config()
+		return Config._instance
+
 # A class to track the state
 class RequestState():
 	# default types is a POST
@@ -25,8 +39,8 @@ class Logger():
 		self.prefix = prefix
 
 	def write(self, msg):
-		global DEVELOPMENT
-		if (DEVELOPMENT):
+		
+		if (Config.instance().DEBUG):
 			print "[%s] %s" % (self.prefix, msg)
 		else:
 			pass
