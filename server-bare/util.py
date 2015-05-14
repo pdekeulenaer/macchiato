@@ -1,0 +1,32 @@
+# utilities
+
+# A class to track the state
+class RequestState():
+	# default types is a POST
+	def __init__(self, reqtype='GET'):
+		self.HTTP_RESPONSE = 202
+		self.HTTP_TYPE = reqtype
+		self.content = None
+
+	def error(self, msg='No error information'):
+		self.HTTP_RESPONSE = 400
+		self.content = msg
+
+	def is_valid(self):
+		return self.HTTP_RESPONSE == 202
+
+	def export(self):
+		return {'HTTP_RESPONSE':self.HTTP_RESPONSE,
+				'HTTP_TYPE': self.HTTP_TYPE,
+				'CONTENT': self.content}
+
+class Logger():
+	def __init__(self, prefix):
+		self.prefix = prefix
+
+	def write(self, msg):
+		global DEVELOPMENT
+		if (DEVELOPMENT):
+			print "[%s] %s" % (self.prefix, msg)
+		else:
+			pass
