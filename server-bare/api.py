@@ -5,19 +5,21 @@
 # Import json and utility libraries
 import json
 from util import Logger, RequestState, Config
-
+import database
 
 
 class API():
 	def __init__(self):
 		self.logger = Logger('API')
+		self.db = database.Database()
 
 	def add_expense(self, json_expense):
 		state = RequestState('POST')										# create a request state object
 		processed_json = json.loads(json_expense)							# interpret the JSON
 
-		report = ExpenseReport.create(processed_json, state) 				# create a new expense report
-		response = report.store(state)										# persist the report
+		if (state.is_valid()) :
+			report = ExpenseReport.create(processed_json, state) 				# create a new expense report
+			response = report.store(self.db,state)										# persist the report
 
 		json_return = json.dumps(state.export())							# encode JSON response
 
@@ -30,7 +32,7 @@ class API():
 
 class ExpenseReport(object):
 
-	MANDATORY_FIELDS = ['amount','user_id','date','category','reimburseable']
+	MANDATORY_FIELDS = ['amount','user','date','category','reimburseable']
 
 	def __init__(self):
 		self.logger = Logger('REPORT')
@@ -61,11 +63,10 @@ class ExpenseReport(object):
 	################################
 	####     INSTANCE METHODS   ####
 	################################
-	def store(self, state):
+	def store(self, db,state):
 		if (state.is_valid()):
 			self.log('Persisting report')
-		state.error()
-
+			db.write_record(self)
 
 	def log(self, msg):
 		self.logger.write(msg)
@@ -88,8 +89,9 @@ if __name__ == "__main__":
 
 	api = API()
 
-	msg1 = {'user_id':'philip', 'date':'2015-05-14', 'amount': 0.55, 'category':'food & beverage', 'reimburseable': False}
+	msg1 = {'user':'philip', 'date':'2015-05-14', 'amount': 0.55, 'category':'food & beverage', 'reimburseable': False}
 	msg = json.dumps(msg1)
+	print msg
 
 	resp = api.add_expense(msg)
 

@@ -4,6 +4,7 @@
 class Config():	
 	def __init__(self):
 		self.DEBUG = True
+		self.DB_PATH = 'macchiato_poc.db'
 		pass
 
 	_instance = None
@@ -18,7 +19,7 @@ class Config():
 class RequestState():
 	# default types is a POST
 	def __init__(self, reqtype='GET'):
-		self.HTTP_RESPONSE = 202
+		self.HTTP_RESPONSE = 200
 		self.HTTP_TYPE = reqtype
 		self.content = None
 
@@ -27,7 +28,7 @@ class RequestState():
 		self.content = msg
 
 	def is_valid(self):
-		return self.HTTP_RESPONSE == 202
+		return self.HTTP_RESPONSE == 200
 
 	def export(self):
 		return {'HTTP_RESPONSE':self.HTTP_RESPONSE,
@@ -39,7 +40,7 @@ class Logger():
 		self.prefix = prefix
 
 	def write(self, msg):
-		
+
 		if (Config.instance().DEBUG):
 			print "[%s] %s" % (self.prefix, msg)
 		else:
