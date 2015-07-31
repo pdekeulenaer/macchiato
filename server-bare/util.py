@@ -1,10 +1,10 @@
 # utilities
-
+import sys
 
 class Config():	
 	def __init__(self):
 		self.DEBUG = True
-		self.DB_PATH = 'macchiato_poc.db'
+		self.DB_PATH = '/home/macchiato/database/macchiato_poc.db'
 		pass
 
 	_instance = None
@@ -43,5 +43,6 @@ class Logger():
 
 		if (Config.instance().DEBUG):
 			print "[%s] %s" % (self.prefix, msg)
+			sys.stdout.flush()
 		else:
 			pass

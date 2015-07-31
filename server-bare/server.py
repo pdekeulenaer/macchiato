@@ -5,6 +5,7 @@ import api
 from util import Config, Logger, RequestState
 
 
+
 urls = (
   '/', 'Index',
   '/expenses/', 'Expenses'
@@ -21,11 +22,15 @@ class Index:
 		raise web.notfound()
 
 class Expenses:
+	def __init__(self):
+		self.logger = Logger("WEB")
+
 	def GET(self):
 		return 'Listing expenses not yet implemented'
 
 	def POST(self, resource_id=None):
 		jsondata = web.data()
+		self.logger.write(jsondata)
 		resp = api.API().add_expense(jsondata)
 		return resp
 
