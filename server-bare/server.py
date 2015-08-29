@@ -26,9 +26,11 @@ class Expenses:
 		self.logger = Logger("WEB")
 
 	def GET(self):
+		web.header('Access-Control-Allow-Origin', '*')
 		return 'Listing expenses not yet implemented'
 
 	def POST(self, resource_id=None):
+		web.header('Access-Control-Allow-Origin', '*')
 		jsondata = web.data()
 		self.logger.write(jsondata)
 		resp = api.API().add_expense(jsondata)
