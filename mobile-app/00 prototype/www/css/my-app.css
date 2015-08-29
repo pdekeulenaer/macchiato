@@ -1,0 +1,52 @@
+img.list-icon {
+    height: 21px;
+    padding: 11px 0px 0px 11px;
+    visibility: hidden;
+}
+
+.fa-left {
+    padding: 11px 20px 0px 0px;
+    float:left;
+}
+
+/** buttons for number input */
+.numcol {
+  background: #fff;
+  text-align: center;
+  color: #000;
+  border: 1px solid #ddd;
+  padding: 5px;
+  height: 60px;
+  display:inline-block;
+}
+
+.numpad {
+  position:relative;
+  font-size: 24px;
+  top:20%;
+}
+
+.col-100.numfield {
+    text-align: right;
+    padding-right: 20px;
+    padding-bottom: 25px;
+}
+
+.numfield-txt {
+    position:relative;
+    font-size: 36px;
+    top:15%;
+}
+
+.col-33.num-clear {
+    background: #00baff;
+    text-align: center;
+    color: #000;
+    border: 1px solid #ddd;
+    padding: 5px;
+    height: 60px;
+}
+
+.row {
+  margin-bottom: 15px;
+}

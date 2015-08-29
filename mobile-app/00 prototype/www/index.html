@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>Macchiato</title>
+    <!-- Path to Framework7 Library CSS-->
+    <link rel="stylesheet" href="css/framework7.ios.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="css/my-app.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <!-- Status bar overlay for fullscreen mode-->
+    <div class="statusbar-overlay"></div>
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Views-->
+    <div class="views">
+      <!-- Your main view, should have "view-main" class-->
+      <div class="view view-main">
+        <!-- Top Navbar-->
+
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="center sliding">Macchiato</div>
+            <div class="right">
+                <a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="center sliding">Macchiato</div>
+            <div class="right">
+                <a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-through toolbar-through">
+          <!-- Page, data-page contains page name-->
+          <div data-page="index" class="page">
+            <!-- Scrollable page content-->
+            <div class="page-content">
+              <div class="content-block-title">What do you want to expense?</div>
+              <div class="list-block">
+                    <ul>
+                      <li>
+                        <a href="amt.html?cat=taxi" class="list-button item-link"><div class="fa fa-car fa-fw fa-left"></div>Taxi</a>
+                      </li>
+                      <li>
+                        <a href="amt.html?cat=drinks" class="list-button item-link"><div class="fa fa-coffee fa-fw  fa-left"></div>Snacks & Drinks</a>
+                      </li>
+                      <li>
+                        <a href="amt.html?cat=food" class="list-button item-link"><div class="fa fa-cutlery fa-fw  fa-left"></div>Food</a>
+                      </li>
+                      <li>
+                        <a href="amt.html?cat=hotel" class="list-button item-link"><div class="fa fa-bed fa-fw  fa-left"></div>Hotel</a>
+                      </li>
+                      <li>
+                        <a href="amt.html?cat=telecom" class="list-button item-link"><div class="fa fa-wifi fa-fw  fa-left"></div>Telecom services</a>
+                      </li>
+                      <li>
+                        <a href="amt.html?cat=other" class="list-button item-link"><div class="fa fa-question fa-fw  fa-left"></div>Other</a>
+                      </li>
+
+                    </ul>
+              </div>
+
+              <div class="content-block-title">Can't find what you're looking for?</div>
+              <div class="content-block">
+                <div class="row">
+                  <div class="col-100">
+                    <a href="#" class="button button-big button-round">
+                        Add new category
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <!-- google geocoder API -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
+    <!-- Path to your app js-->
+    <script type="text/javascript" src="js/my-app.js"></script>
+  </body>
+</html>

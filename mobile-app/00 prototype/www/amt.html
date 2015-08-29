@@ -1,0 +1,56 @@
+        <!-- We don't need full layout here, because this page will be parsed with Ajax-->
+        <!-- Top Navbar-->
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="left"><a href="index.html" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+            <div class="center sliding">Amount</div>
+            <div class="right">
+              <!-- Right link contains only icon - additional "icon-only" class--><a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="pages">
+
+          <!-- Page, data-page contains page name-->
+          <div data-page="amount" class="page navbar-through">
+            <!-- Scrollable page content-->
+            <div class="page-content">
+
+              <div class="content-block">
+                <div class="row">
+                    <div id="numfield" class="col-100 numcol numfield"><span class="numfield-txt"></span></div>
+                </div>
+                <div class="row">
+                  <div id="numpad-7" class="col-33 numcol"><span class="numpad">7</span></div>
+                  <div id="numpad-8" class="col-33 numcol"><span class="numpad">8</span></div>
+                  <div id="numpad-9" class="col-33 numcol"><span class="numpad">9</span></div>
+                </div>
+                <div class="row">
+                  <div id="numpad-4" class="col-33 numcol"><span class="numpad">4</span></div>
+                  <div id="numpad-5" class="col-33 numcol"><span class="numpad">5</span></div>
+                  <div id="numpad-6" class="col-33 numcol"><span class="numpad">6</span></div>
+                </div>
+                <div class="row">
+                  <div id="numpad-1" class="col-33 numcol"><span class="numpad">1</span></div>
+                  <div id="numpad-2" class="col-33 numcol"><span class="numpad">2</span></div>
+                  <div id="numpad-3" class="col-33 numcol"><span class="numpad">3</span></div>
+                </div>
+                <div class="row">
+                  <div id="numpad-dec" class="col-33 numcol"><span class="numpad">.</span></div>
+                  <div id="numpad-0" class="col-33 numcol"><span class="numpad">0</span></div>
+                  <div id="numpad-clr" class="col-33  numcol num-clear"><span class="numpad">C</span></div>
+                </div>
+                <div class="row">
+                  <div class="col-100">
+                    <a href="summary.html" class="button button-big button-round num-clear" id="confirm">
+                        Confirm
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+            <!-- Path to your app js-->
+    <script type="text/javascript" src="js/my-app.js"></script>

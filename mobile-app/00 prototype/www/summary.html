@@ -1,0 +1,91 @@
+        <!-- We don't need full layout here, because this page will be parsed with Ajax-->
+        <!-- Top Navbar-->
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="left"><a href="index.html" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+            <div class="center sliding">Amount</div>
+            <div class="right">
+              <!-- Right link contains only icon - additional "icon-only" class--><a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="pages">
+
+          <!-- Page, data-page contains page name-->
+          <div data-page="summary" class="page navbar-through">
+            <!-- Scrollable page content-->
+            <div class="page-content">
+
+                <div class="content-block-title">Overview of expense</div>
+                <div class="list-block">
+                  <form id="summary-form" class="list-block">
+                  <ul>
+                    <li>
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-title label">Category</div>
+                          <div class="item-input">
+                            <select id="category-selector" name="category">
+                              <option value="taxi">Taxi</option>
+                              <option value="drinks">Snacks & drinks</option>
+                              <option value="food">Food</option>
+                              <option value="hotel">Hotel</option>
+                              <option value="telecom">Telecommunications</option>
+                              <option value="other">Other</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-title label">Amount to pay</div>
+                          <div class="item-input summary-input">
+                            <input type="number" value="0.0" id="expense-amount" name="amount">
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-title label">Location</div>
+                          <div class="item-input">
+                            <input type="text" value="country" id="location" name="location" disabled>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-title label">Business expense?</div>
+                          <div class="item-input">
+                          <label class="label-switch">
+                            <input type="checkbox" id="business-expense" name="reimbursed" checked>
+                            <div class="checkbox"></div>
+                          </label>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+
+                  </ul>
+                  </form>
+                </div>
+
+              <div class="content-block-title">Ready to submit?</div>
+              <div class="list-block">
+                <div class="row">
+                  <div class="col-100">
+                    <a href="#" class="button button-big button-round form-to-json" id="submit-button">
+                        Submit!
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
