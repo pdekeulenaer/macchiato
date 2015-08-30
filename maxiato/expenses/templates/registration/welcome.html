@@ -1,0 +1,7 @@
+{% if user.is_authenticated %}
+  <p>Welcome {{ user.username }}! Hope you have a blast!</p>
+
+{% else %}
+    <p> You need to log in my friend </p>
+
+{% endblock %}
